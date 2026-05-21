@@ -20,11 +20,7 @@ public class PanelMapaVisualizar extends JPanel
 
     public PanelMapaVisualizar( )
     {
-        ImageIcon icono = new ImageIcon( "mapa.png" );
-        if( icono.getIconWidth( ) == -1 )
-        {
-            icono = new ImageIcon( "./imagenes/mapa.png" );
-        }
+    	ImageIcon icono = new ImageIcon( getClass().getResource("/imagenes/mapa.png") );
         this.imagenMapa = icono.getImage( );
         setPreferredSize( new Dimension( 450, 450 ) );
     }

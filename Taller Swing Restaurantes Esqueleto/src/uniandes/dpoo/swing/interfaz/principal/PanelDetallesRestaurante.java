@@ -33,6 +33,7 @@ public class PanelDetallesRestaurante extends JPanel
         // Configura la etiqueta para el nombre
         // TODO completar el constructor
     	labNombre= new JLabel("Nombre");
+    	
 
         // Configura la etiqueta para la calificación
         // TODO completar el constructor
@@ -59,7 +60,7 @@ public class PanelDetallesRestaurante extends JPanel
     private void actualizarRestaurante( String nombre, int calificacion, boolean visitado )
     {
      // TODO completar actualizarRestaurante
-    	labNombre.setText(nombre);
+    	labNombre.setText("Nombre: "+ nombre);
     	chkVisitado.setSelected(visitado);
     	labCalificacion.setIcon(buscarIconoCalificacion(calificacion));
     }
@@ -80,7 +81,7 @@ public class PanelDetallesRestaurante extends JPanel
      */
     private ImageIcon buscarIconoCalificacion( int calificacion )
     {
-        String imagen = "./imagenes/stars" + calificacion + ".png";
-        return new ImageIcon( imagen );
+    	String imagen = "/imagenes/stars" + calificacion + ".png";
+        return new ImageIcon( getClass().getResource(imagen) );
     }
 }

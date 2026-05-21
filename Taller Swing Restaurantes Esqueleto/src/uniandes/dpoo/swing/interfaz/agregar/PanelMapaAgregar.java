@@ -31,7 +31,7 @@ public class PanelMapaAgregar extends JPanel implements MouseListener
 
     public PanelMapaAgregar( )
     {
-        this.labMapa = new JLabel( new ImageIcon( "./src/imagenes/mapa.png" ) );
+    	this.labMapa = new JLabel( new ImageIcon( getClass().getResource("/imagenes/mapa.png") ) );
         labMapa.setBorder( new LineBorder( Color.DARK_GRAY ) );
         labMapa.addMouseListener( this );
         add( labMapa );
@@ -49,6 +49,7 @@ public class PanelMapaAgregar extends JPanel implements MouseListener
         return new int[]{ x, y };
     }
 
+    
     @Override
     public void paint( Graphics g )
     {
@@ -59,13 +60,14 @@ public class PanelMapaAgregar extends JPanel implements MouseListener
         g2d.setColor( Color.red );
         g2d.fillOval( x - 3, y - 3, 7, 7 );
     }
+    
 
     @Override
     public void mouseClicked( MouseEvent e )
     {
-        this.x = e.getX( );
-        this.y = e.getY( );
-        repaint( );
+    	this.x = e.getX();
+        this.y = e.getY();
+        repaint();
     }
 
     @Override

@@ -66,7 +66,15 @@ public class VentanaAgregarRestaurante extends JFrame
     {
         // TODO completar
     	
-    	ventanaPrincipal.agregarRestaurante(panelDetalles.getNombre(), panelDetalles.getCalificacion(),panelMapa.getX(), panelMapa.getY(), panelDetalles.getVisitado());
+    	int[] coords = panelMapa.getCoordenadas();
+    	ventanaPrincipal.agregarRestaurante(
+    		    panelDetalles.getNombre(), 
+    		    panelDetalles.getCalificacion(), 
+    		    coords[0], 
+    		    coords[1], 
+    		    panelDetalles.getVisitado()
+    		);
+    	cerrarVentana();	
     }
 
     /**
